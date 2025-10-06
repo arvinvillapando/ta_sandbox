@@ -1,0 +1,97 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dh020f4ynljhp"
+path="res://.godot/imported/Baseball.fbx-fd50506b30a611f68ace6e15ab1f9bfd.scn"
+
+[deps]
+
+source_file="res://Art/Character/Minis/Baseball/Baseball.fbx"
+dest_files=["res://.godot/imported/Baseball.fbx-fd50506b30a611f68ace6e15ab1f9bfd.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"meshes": {
+"Baseball_Arms": {
+"generate/lightmap_uv": 0,
+"generate/lod_params": [],
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Art/Character/Minis/Baseball/Resource/Baseball_Arms.tres",
+"save_to_file/path": "uid://chwrwlrq78o5m"
+},
+"Baseball_Body": {
+"generate/lightmap_uv": 0,
+"generate/lod_params": [],
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Art/Character/Minis/Baseball/Resource/Baseball_Body.tres",
+"save_to_file/path": "uid://dp3cm7bkw0e76"
+},
+"Baseball_Eyes": {
+"generate/lightmap_uv": 0,
+"generate/lod_params": [],
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Art/Character/Minis/Baseball/Resource/Baseball_Eyes.tres",
+"save_to_file/path": "uid://bbghwtslggd4a"
+},
+"Baseball_Hat": {
+"generate/lightmap_uv": 0,
+"generate/lod_params": [],
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Art/Character/Minis/Baseball/Resource/Baseball_Hat.tres",
+"save_to_file/path": "uid://chntkbobyu4m3"
+},
+"Baseball_Legs": {
+"generate/lightmap_uv": 0,
+"generate/lod_params": [],
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Art/Character/Minis/Baseball/Resource/Baseball_Legs.tres",
+"save_to_file/path": "uid://b5cok1nwr1ckj"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2
