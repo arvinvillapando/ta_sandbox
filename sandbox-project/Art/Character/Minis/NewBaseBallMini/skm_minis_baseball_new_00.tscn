@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://de3q1742e4ffv"]
+
+[ext_resource type="PackedScene" uid="uid://ikwfvox52f2o" path="res://Art/Character/Minis/Baseball/SKM_Minis_Baseball.tscn" id="1_65iv1"]
+[ext_resource type="ArrayMesh" uid="uid://chwrwlrq78o5m" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Arms.tres" id="2_pphsi"]
+[ext_resource type="Skin" uid="uid://dbipibrtfrbdl" path="res://Art/Character/Minis/Baseball/Resource/SKM_Minis_Baseball_Skin.tres" id="3_eqx1c"]
+[ext_resource type="ArrayMesh" uid="uid://dmryqm6brcbif" path="res://Art/Character/Minis/Crow/Resources/MSH_Beak.tres" id="4_eowgn"]
+
+[node name="SKM_Minis_Baseball" instance=ExtResource("1_65iv1")]
+
+[node name="bball_arms2" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10761145, 0.103382915)
+mesh = ExtResource("2_pphsi")
+skin = ExtResource("3_eqx1c")
+skeleton = NodePath("../..")
+
+[node name="bball_body2" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.032738, 0)
+mesh = ExtResource("4_eowgn")
+skin = ExtResource("3_eqx1c")
+skeleton = NodePath("../..")

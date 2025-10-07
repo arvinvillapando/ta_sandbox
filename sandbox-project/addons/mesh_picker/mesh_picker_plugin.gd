@@ -15,9 +15,13 @@ func _enter_tree():
 	plugin_added = true
 	
 	# Create the docked panel
-	mesh_picker_panel = preload("res://addons/mesh_picker/mesh_picker_panel.tscn").instantiate()
+	var scene = preload("res://addons/mesh_picker/mesh_picker_panel.tscn")
+	mesh_picker_panel = scene.instantiate()
 	mesh_picker_panel.name = "Data Editor"
 	add_control_to_dock(DOCK_SLOT_LEFT_UL, mesh_picker_panel)
+	
+	# Wait for the panel to be ready
+	await get_tree().process_frame
 
 func _exit_tree():
 	if plugin_added and mesh_picker_inspector_plugin != null:
