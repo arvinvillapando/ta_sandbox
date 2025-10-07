@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b735v8t0hkn5t"]
+[gd_scene format=3 uid="uid://d9e8f7a6b5c4d3"]
 
-[node name="ARM_Minis" type="Skeleton3D"]
+[node name="Skeleton3D" type="Skeleton3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 7.5497894e-08, 0, -7.5497894e-08, 1, 0, 0, 0)
 bones/0/name = "root"
 bones/0/parent = -1

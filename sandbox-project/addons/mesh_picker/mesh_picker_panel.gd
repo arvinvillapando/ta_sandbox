@@ -12,6 +12,9 @@ var scroll_vbox: VBoxContainer
 func _ready():
 	# Get reference to the scroll container from the scene
 	scroll_vbox = get_node("VBoxContainer/ScrollContainer/ScrollVBox")
+	
+	# Set tooltip for the panel
+	tooltip_text = "Select a node with mesh_data property to edit mesh resources"
 
 func _on_mesh_selected(node_name: String, resource: Resource):
 	print("Panel: Resource selected for ", node_name, " - ", resource)
@@ -30,24 +33,19 @@ func _on_mesh_selected(node_name: String, resource: Resource):
 	print("Panel: Called setter on target object")
 	print("Panel: Target object dictionary now has ", target_object.mesh_data.size(), " entries")
 
-func _on_mesh_changed(resource: Resource):
-	# Find which picker triggered this by comparing the resource
-	for picker_data in mesh_pickers:
-		if picker_data["picker"].edited_resource == resource:
-			var node_name = picker_data["node_name"]
-			print("Panel: Mesh changed for ", node_name, " to ", resource)
-			# Update the dictionary
-			if resource and resource is Mesh:
-				mesh_data[node_name] = resource
-			else:
-				mesh_data.erase(node_name)
-			
-			print("Panel: Dictionary now has ", mesh_data.size(), " entries: ", mesh_data.keys())
-			# Apply changes to the target object using the setter
-			target_object.mesh_data = mesh_data
-			print("Panel: Called setter on target object")
-			print("Panel: Target object dictionary now has ", target_object.mesh_data.size(), " entries")
-			break
+func _on_mesh_changed(node_name: String, resource: Resource):
+	print("Panel: Mesh changed for ", node_name, " to ", resource)
+	# Update the dictionary
+	if resource and resource is Mesh:
+		mesh_data[node_name] = resource
+	else:
+		mesh_data.erase(node_name)
+	
+	print("Panel: Dictionary now has ", mesh_data.size(), " entries: ", mesh_data.keys())
+	# Apply changes to the target object using the setter
+	target_object.mesh_data = mesh_data
+	print("Panel: Called setter on target object")
+	print("Panel: Target object dictionary now has ", target_object.mesh_data.size(), " entries")
 
 func setup(obj):
 	target_object = obj
@@ -82,31 +80,24 @@ func update_ui():
 	
 	mesh_pickers.clear()
 	
+	# Load the template scene
+	var entry_template = preload("res://addons/mesh_picker/mesh_picker_entry.tscn")
+	
 	# Create UI for each child MeshInstance3D
 	for child_node in child_nodes:
-		var hbox = HBoxContainer.new()
-		hbox.add_theme_constant_override("separation", 12)
-		hbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		scroll_vbox.add_child(hbox)
+		var entry = entry_template.instantiate()
+		scroll_vbox.add_child(entry)
 		
-		var name_label = Label.new()
-		name_label.text = child_node.name + ":"
-		name_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-		name_label.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-		hbox.add_child(name_label)
+		# Get the mesh resource for this node
+		var mesh_resource = null
+		if String(child_node.name) in mesh_data:
+			mesh_resource = mesh_data[String(child_node.name)]
 		
-		var mesh_picker = EditorResourcePicker.new()
-		mesh_picker.base_type = "Mesh"
-		mesh_picker.editable = true
-		mesh_picker.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		# Setup the entry
+		entry.setup(child_node.name, mesh_resource)
 		
-		# Set current mesh if it exists
-		if child_node.name in mesh_data:
-			mesh_picker.edited_resource = mesh_data[child_node.name]
+		# Connect signals
+		entry.mesh_changed.connect(_on_mesh_changed)
+		entry.mesh_selected.connect(_on_mesh_selected)
 		
-		# Connect signals to update the dictionary
-		mesh_picker.resource_changed.connect(_on_mesh_changed)
-		mesh_picker.resource_selected.connect(_on_mesh_selected.bind(child_node.name))
-		hbox.add_child(mesh_picker)
-		
-		mesh_pickers.append({"node_name": child_node.name, "picker": mesh_picker})
+		mesh_pickers.append({"node_name": child_node.name, "entry": entry})

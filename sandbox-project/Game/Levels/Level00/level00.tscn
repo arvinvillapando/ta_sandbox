@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bybmn8q8hjp7u"]
+
+[ext_resource type="PackedScene" uid="uid://dtlq8wd2mid37" path="res://Game/CharacterController/character_controller.tscn" id="1_0x8y9"]
+[ext_resource type="Script" uid="uid://cpsgp2um3alx8" path="res://Game/Levels/Level00/level00.gd" id="2_0x8y9"]
+
+[node name="Level00" type="Node3D"]
+script = ExtResource("2_0x8y9")
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Ground" type="CSGBox3D" parent="Environment"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -0.5, 0)
+use_collision = true
+
+[node name="Platform2" type="CSGBox3D" parent="Environment"]
+transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 2, -3, 1.5, 0)
+use_collision = true
+
+[node name="Platform3" type="CSGBox3D" parent="Environment"]
+transform = Transform3D(1.5, 0, 0, 0, 0.5, 0, 0, 0, 1.5, 0, 2.5, 0)
+use_collision = true
+
+[node name="Obstacle2" type="CSGBox3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -5, 1, 0)
+use_collision = true
+
+[node name="Obstacle3" type="CSGBox3D" parent="Environment"]
+transform = Transform3D(0.5, 0, 0, 0, 3, 0, 0, 0, 0.5, 0, 0, 0)
+use_collision = true
+
+[node name="CharacterController" parent="." instance=ExtResource("1_0x8y9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1920929e-07, 2.1491754)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-1, 6.181724e-08, -6.181724e-08, -8.270648e-08, -0.43984514, 0.89807373, 2.8326392e-08, 0.89807373, 0.43984514, 0, 10, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8098471, 0.58664095, 0, -0.58664095, 0.8098471, 0, 5.247464, 8.704945)
+fov = 24.0
+size = 5.0

@@ -11,9 +11,18 @@ config_version=5
 [application]
 
 config/name="SandboxProject"
+run/main_scene="uid://bybmn8q8hjp7u"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/mesh_picker/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Art/Character/": "orange",
+"res://Art/Character/Minis/": "orange",
+"res://Art/Motion/": "teal"
+}

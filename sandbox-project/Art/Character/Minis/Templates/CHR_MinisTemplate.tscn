@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c28hhu0k52s7i"]
 
 [ext_resource type="PackedScene" uid="uid://b735v8t0hkn5t" path="res://Art/Armature/arm_minis.tscn" id="1_0kjsh"]
-[ext_resource type="AnimationLibrary" uid="uid://dyh5otf7hx1np" path="res://Art/Motion/Minis/Resources/AnimationLibraries/ANIM_SharedMiniLib.tres" id="3_0oy20"]
+[ext_resource type="AnimationLibrary" uid="uid://dyh5otf7hx1np" path="res://Art/Motion/Minis/Resources/AnimationLibraries/ANIM_SharedMiniLib.tres" id="2_0oy20"]
 
 [node name="CHR_Minis_Template" type="Node3D"]
 
@@ -82,5 +82,5 @@ bones/46/scale = Vector3(1, 1, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": ExtResource("3_0oy20")
+&"": ExtResource("2_0oy20")
 }

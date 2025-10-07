@@ -1,19 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://pc3tv2kh7ikr"]
 
-[ext_resource type="PackedScene" uid="uid://b735v8t0hkn5t" path="res://Art/Armature/arm_minis.tscn" id="1_5noeh"]
-[ext_resource type="PackedScene" uid="uid://ikwfvox52f2o" path="res://Art/Character/Minis/Baseball/SKM_Minis_Baseball.tscn" id="2_nbrch"]
+[ext_resource type="PackedScene" uid="uid://4xykb0ieahuc" path="res://Art/Armature/arm_minis.tscn" id="1_5noeh"]
+[ext_resource type="PackedScene" uid="uid://4m5g54x56qj4" path="res://Art/Character/Minis/NewBaseBallMini/skm_minis_baseball_new.tscn" id="2_x82yw"]
 [ext_resource type="AnimationLibrary" uid="uid://dyh5otf7hx1np" path="res://Art/Motion/Minis/Resources/AnimationLibraries/ANIM_SharedMiniLib.tres" id="3_8ipkl"]
 
 [node name="ChrMinisCrow" type="Node3D"]
 
 [node name="Skeleton3D" parent="." instance=ExtResource("1_5noeh")]
-bones/1/position = Vector3(0, 0.135, 0)
+bones/1/position = Vector3(0.086406425, 0.3718166, 0.11394793)
+bones/1/rotation = Quaternion(0.6879303, -0.037156414, 0.72449607, 0.021836648)
 bones/2/position = Vector3(0, 0.015, 0)
 bones/4/position = Vector3(0, 0.026887, 0)
-bones/4/rotation = Quaternion(-0.006224998, 0, 0, 0.9999806)
+bones/4/rotation = Quaternion(-0.0062249973, 0, 0, 0.9999806)
 bones/4/scale = Vector3(1, 1, 1)
-bones/5/position = Vector3(0, 0.296908, 0.007395)
-bones/5/rotation = Quaternion(0.012450007, 0, 0, 0.9999225)
+bones/5/position = Vector3(-0.000706, 0.260866, 0.003908)
+bones/5/rotation = Quaternion(0.012450006, 0, 0, 0.9999226)
 bones/5/scale = Vector3(1, 1, 1)
 bones/7/position = Vector3(0, 0.075, -0.03)
 bones/7/rotation = Quaternion(0, 0, 0, 1)
@@ -54,32 +55,33 @@ bones/28/rotation = Quaternion(0, 0, 0, 1)
 bones/28/scale = Vector3(1, 1, 1)
 bones/29/position = Vector3(0, -0.015, -0.001182)
 bones/29/rotation = Quaternion(0, 0, 0, 1)
-bones/32/position = Vector3(0.2025, 0.0063690003, 0.000201)
-bones/32/rotation = Quaternion(-0.023249991, 0.122445956, -0.025282988, 0.99188066)
+bones/32/position = Vector3(0.171379, 0.094596, 0.006702)
+bones/32/rotation = Quaternion(-0.3868129, 0.28984395, 0.45769495, 0.74624497)
 bones/32/scale = Vector3(1, 1, 1)
 bones/33/position = Vector3(0.027, -0.1125, 0.0225)
-bones/33/rotation = Quaternion(0.023249991, -0.122445956, 0.02528299, 0.99188066)
+bones/33/rotation = Quaternion(-0.4296141, 0.19242, -0.26424605, 0.84177226)
 bones/33/scale = Vector3(1, 1, 1)
-bones/35/position = Vector3(-0.2025, 0.0063690003, 0.000201)
-bones/35/rotation = Quaternion(-0.026719999, -0.13683097, 0.028252995, 0.98983085)
+bones/35/position = Vector3(-0.185833, 0.034859, -0.00138)
+bones/35/rotation = Quaternion(0.70118326, 0.32597613, -0.42208257, 0.4732102)
 bones/35/scale = Vector3(1, 1, 1)
 bones/36/position = Vector3(-0.027, -0.1125, 0.0225)
-bones/36/rotation = Quaternion(0.026719999, 0.13683099, -0.028252995, 0.98983085)
+bones/36/rotation = Quaternion(0.100271985, 0.36947697, 0.4086509, 0.8285149)
 bones/36/scale = Vector3(1, 1, 1)
-bones/42/position = Vector3(0.0825, 0.00708, 0.019398)
-bones/42/rotation = Quaternion(0.006222998, -1.9999995e-06, -1.4034585e-15, 0.9999806)
-bones/42/scale = Vector3(1, 1, 1)
+bones/42/position = Vector3(0.065175384, 0.00708, 0.0642816)
+bones/42/rotation = Quaternion(0.21856393, 0.00030599986, 0.049629983, 0.97455966)
+bones/42/scale = Vector3(1, 1.4003422, 1)
 bones/43/position = Vector3(0, -0.101132, 0.001259)
 bones/43/rotation = Quaternion(0, 0, 0, 1)
 bones/43/scale = Vector3(1, 1, 1)
-bones/45/position = Vector3(-0.0825, 0.00708, 0.019399)
-bones/45/rotation = Quaternion(0.006224998, 0, 0, 0.9999806)
-bones/45/scale = Vector3(1, 1, 1)
+bones/45/position = Vector3(-0.045, 0.00708, 0.005572319)
+bones/45/rotation = Quaternion(-0.0038740016, -0.0029990005, -0.18296504, 0.9831072)
+bones/45/scale = Vector3(1, 1.243248, 1)
 bones/46/position = Vector3(0, -0.101132, 0.001259)
 bones/46/rotation = Quaternion(0, 0, 0, 1)
 bones/46/scale = Vector3(1, 1, 1)
 
-[node name="SKM_Minis_Baseball" parent="Skeleton3D" instance=ExtResource("2_nbrch")]
+[node name="SKM_Minis_Baseball" parent="Skeleton3D" instance=ExtResource("2_x82yw")]
+transform = Transform3D(1, 0, 0, 0, 1, -7.5497894e-08, 0, 7.5497894e-08, 1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

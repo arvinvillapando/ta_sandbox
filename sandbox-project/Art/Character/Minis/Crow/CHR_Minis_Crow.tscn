@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dqslhbfym8nf4"]
 
-[ext_resource type="PackedScene" uid="uid://b735v8t0hkn5t" path="res://Art/Armature/arm_minis.tscn" id="1_jy60p"]
+[ext_resource type="PackedScene" uid="uid://d9e8f7a6b5c4d3" path="res://Art/Armature/arm_minis.tscn" id="1_jy60p"]
 [ext_resource type="PackedScene" uid="uid://dgdsrne6m7krp" path="res://Art/Character/Minis/Crow/SKM_Minis_Crow.tscn" id="2_xvs3f"]
 [ext_resource type="AnimationLibrary" uid="uid://dyh5otf7hx1np" path="res://Art/Motion/Minis/Resources/AnimationLibraries/ANIM_SharedMiniLib.tres" id="3_yyrn3"]
 

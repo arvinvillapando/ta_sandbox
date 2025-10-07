@@ -11,11 +11,11 @@
 [node name="SKM_Minis_Baseball" type="Node3D"]
 script = ExtResource("1_0vhfp")
 mesh_data = {
-&"bball_arms": ExtResource("1_pdclg"),
-&"bball_body": ExtResource("2_cq2um"),
-&"bball_eyes": ExtResource("3_0vhfp"),
-&"bball_hat": ExtResource("4_3xlwx"),
-&"bball_legs": ExtResource("5_qj6c7")
+"bball_arms": ExtResource("1_pdclg"),
+"bball_body": ExtResource("2_cq2um"),
+"bball_eyes": ExtResource("3_0vhfp"),
+"bball_hat": ExtResource("4_3xlwx"),
+"bball_legs": ExtResource("5_qj6c7")
 }
 
 [node name="bball_arms" type="MeshInstance3D" parent="."]

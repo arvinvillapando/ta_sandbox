@@ -20,6 +20,9 @@ func _enter_tree():
 	mesh_picker_panel.name = "Data Editor"
 	add_control_to_dock(DOCK_SLOT_LEFT_UL, mesh_picker_panel)
 	
+	# Connect to selection changed to auto-update panel
+	get_editor_interface().get_selection().selection_changed.connect(_on_selection_changed)
+	
 	# Wait for the panel to be ready
 	await get_tree().process_frame
 
@@ -30,6 +33,20 @@ func _exit_tree():
 	
 	if mesh_picker_panel != null:
 		remove_control_from_docks(mesh_picker_panel)
+
+func _on_selection_changed():
+	# Get the currently selected node
+	var selection = get_editor_interface().get_selection()
+	var selected_nodes = selection.get_selected_nodes()
+	
+	if selected_nodes.size() > 0:
+		var selected_node = selected_nodes[0]
+		# Check if this node has mesh_data property
+		if "mesh_data" in selected_node:
+			# Auto-update the panel with the selected node
+			if mesh_picker_panel:
+				mesh_picker_panel.setup(selected_node)
+				mesh_picker_panel.visible = true
 
 func _can_handle(object):
 	# Check if the object has the mesh_data property and the methods we need

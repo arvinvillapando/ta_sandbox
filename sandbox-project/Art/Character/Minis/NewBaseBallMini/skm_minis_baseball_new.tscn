@@ -1,11 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://4m5g54x56qj4"]
+[gd_scene load_steps=9 format=3 uid="uid://4m5g54x56qj4"]
 
 [ext_resource type="PackedScene" uid="uid://ikwfvox52f2o" path="res://Art/Character/Minis/Baseball/SKM_Minis_Baseball.tscn" id="1_h0bdt"]
 [ext_resource type="ArrayMesh" uid="uid://chwrwlrq78o5m" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Arms.tres" id="2_yjjm2"]
 [ext_resource type="Skin" uid="uid://dbipibrtfrbdl" path="res://Art/Character/Minis/Baseball/Resource/SKM_Minis_Baseball_Skin.tres" id="3_26nqj"]
+[ext_resource type="ArrayMesh" uid="uid://dp3cm7bkw0e76" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Body.tres" id="3_aotou"]
+[ext_resource type="ArrayMesh" uid="uid://bbghwtslggd4a" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Eyes.tres" id="4_fiuh8"]
 [ext_resource type="ArrayMesh" uid="uid://dmryqm6brcbif" path="res://Art/Character/Minis/Crow/Resources/MSH_Beak.tres" id="4_w2r8o"]
+[ext_resource type="ArrayMesh" uid="uid://ltpoqcwl0yk2" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Hat.tres" id="6_232fa"]
+[ext_resource type="ArrayMesh" uid="uid://b5cok1nwr1ckj" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Legs.tres" id="7_cdawb"]
 
 [node name="SKM_Minis_Baseball" instance=ExtResource("1_h0bdt")]
+mesh_data = {
+"bball_arms": ExtResource("2_yjjm2"),
+"bball_arms2": ExtResource("2_yjjm2"),
+"bball_beak": ExtResource("4_w2r8o"),
+"bball_body": ExtResource("3_aotou"),
+"bball_eyes": ExtResource("4_fiuh8"),
+"bball_hat": ExtResource("6_232fa"),
+"bball_legs": ExtResource("7_cdawb")
+}
 
 [node name="bball_arms2" type="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 0.9686352, 0.24848703, 0, -0.24848703, 0.9686352, 0, 0.07329103, 0.1509099)
@@ -14,7 +27,6 @@ skin = ExtResource("3_26nqj")
 skeleton = NodePath("../..")
 
 [node name="bball_beak" type="MeshInstance3D" parent="." index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67961586, -0.06485219, 0)
 mesh = ExtResource("4_w2r8o")
 skin = ExtResource("3_26nqj")
 skeleton = NodePath("../..")

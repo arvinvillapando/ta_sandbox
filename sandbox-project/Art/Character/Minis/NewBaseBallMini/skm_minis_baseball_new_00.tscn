@@ -7,8 +7,11 @@
 
 [node name="SKM_Minis_Baseball" instance=ExtResource("1_65iv1")]
 
+[node name="bball_arms" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.100486994)
+
 [node name="bball_arms2" type="MeshInstance3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10761145, 0.103382915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031377763, 0.116802365, -0.008613557)
 mesh = ExtResource("2_pphsi")
 skin = ExtResource("3_eqx1c")
 skeleton = NodePath("../..")

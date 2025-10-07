@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtlq8wd2mid37"]
+
+[ext_resource type="Script" uid="uid://bxfp5mayybeqi" path="res://Game/CharacterController/character_controller.gd" id="1_0x8y9"]
+[ext_resource type="PackedScene" uid="uid://pc3tv2kh7ikr" path="res://Art/Character/Minis/Baseball/CHR_Minis_Baseball.tscn" id="2_0x8y9"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
+radius = 0.3
+height = 0.6118164
+
+[node name="CharacterController" type="CharacterBody3D"]
+script = ExtResource("1_0x8y9")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3059082, 0)
+shape = SubResource("CapsuleShape3D_1")
+
+[node name="CHR_Minis_Baseball" parent="." instance=ExtResource("2_0x8y9")]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://25c0fvi2acu0"]
+[gd_scene load_steps=3 format=3 uid="uid://25c0fvi2acu0"]
 
-[ext_resource type="PackedScene" uid="uid://b735v8t0hkn5t" path="res://Art/Armature/arm_minis.tscn" id="1_0c5o1"]
-[ext_resource type="AnimationLibrary" uid="uid://dyh5otf7hx1np" path="res://Art/Motion/Minis/Resources/AnimationLibraries/ANIM_SharedMiniLib.tres" id="2_2kvaa"]
+[ext_resource type="PackedScene" uid="uid://d9e8f7a6b5c4d3" path="res://Art/Armature/arm_minis.tscn" id="1_0c5o1"]
 [ext_resource type="PackedScene" uid="uid://csdnx6p2m0pt8" path="res://Art/Character/Minis/CrowBall/SKM_Minis_Crowball.tscn" id="2_iurhl"]
+[ext_resource type="AnimationLibrary" uid="uid://dyh5otf7hx1np" path="res://Art/Motion/Minis/Resources/AnimationLibraries/ANIM_SharedMiniLib.tres" id="3_2kvaa"]
 
 [node name="CHR_Minis_Template" type="Node3D"]
 
@@ -84,5 +84,5 @@ bones/46/scale = Vector3(1, 1, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": ExtResource("2_2kvaa")
+&"": ExtResource("3_2kvaa")
 }

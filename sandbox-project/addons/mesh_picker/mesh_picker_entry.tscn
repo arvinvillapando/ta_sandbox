@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cggjpfg37a5xv"]
+
+[ext_resource type="Script" uid="uid://csms8iqbkb5b7" path="res://addons/mesh_picker/mesh_picker_entry.gd" id="1_0x8y9"]
+
+[node name="MeshPickerEntry" type="Control"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+script = ExtResource("1_0x8y9")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 12
+
+[node name="NameLabel" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 1
+
+[node name="MeshPicker" type="EditorResourcePicker" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+base_type = "Mesh"
+
+[node name="OpenButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Load Mesh"

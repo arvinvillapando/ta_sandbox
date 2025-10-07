@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=10 format=3 uid="uid://dyh5otf7hx1np"]
+[gd_resource type="AnimationLibrary" load_steps=11 format=3 uid="uid://dyh5otf7hx1np"]
 
 [ext_resource type="Animation" uid="uid://bt01uy13rlphi" path="res://Art/Motion/Minis/Resources/Animation/Mini_Dance.tres" id="1_2spig"]
 [ext_resource type="Animation" uid="uid://bhcrbpap8ent" path="res://Art/Motion/Minis/Resources/Animation/Mini_FistPump.tres" id="2_it4o5"]
@@ -8,6 +8,7 @@
 [ext_resource type="Animation" uid="uid://drk8l4ymqpw41" path="res://Art/Motion/Minis/Resources/Animation/Mini_Wave.tres" id="6_pyqv5"]
 [ext_resource type="Animation" uid="uid://dxpbm3elqo0n0" path="res://Art/Motion/Minis/Resources/Animation/Mini_Wiggle.tres" id="7_m1um1"]
 [ext_resource type="Animation" uid="uid://dss22p2n2kupp" path="res://Art/Motion/Minis/Resources/Animation/Mini_RestPose.tres" id="8_it4o5"]
+[ext_resource type="Animation" uid="uid://c8yay201a4b5c" path="res://Art/Motion/Minis/Resources/Animation/Mini_Walk.tres" id="9_walk"]
 
 [sub_resource type="Animation" id="Animation_uve2r"]
 
@@ -19,6 +20,7 @@ _data = {
 &"Mini_Idle": ExtResource("4_kpsow"),
 &"Mini_RestPose": ExtResource("8_it4o5"),
 &"Mini_Victory": ExtResource("5_882cl"),
+&"Mini_Walk": ExtResource("9_walk"),
 &"Mini_Wave": ExtResource("6_pyqv5"),
 &"Mini_Wiggle": ExtResource("7_m1um1"),
 &"RESET": SubResource("Animation_uve2r")
