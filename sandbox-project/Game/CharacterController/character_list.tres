@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CharacterList" load_steps=5 format=3 uid="uid://b53x2m86djjyg"]
+
+[ext_resource type="PackedScene" uid="uid://pc3tv2kh7ikr" path="res://Art/Character/Minis/Baseball/CHR_Minis_Baseball.tscn" id="1_baseball"]
+[ext_resource type="PackedScene" uid="uid://dqslhbfym8nf4" path="res://Art/Character/Minis/Crow/CHR_Minis_Crow.tscn" id="2_crow"]
+[ext_resource type="PackedScene" uid="uid://25c0fvi2acu0" path="res://Art/Character/Minis/CrowBall/CHR_Minis_CrowBall.tscn" id="3_63jq4"]
+[ext_resource type="Script" uid="uid://5k6ylockwpt6" path="res://Game/CharacterController/character_list.gd" id="3_script"]
+
+[resource]
+script = ExtResource("3_script")
+characters = Array[PackedScene]([ExtResource("3_63jq4"), ExtResource("2_crow"), ExtResource("1_baseball")])
+metadata/_custom_type_script = "uid://5k6ylockwpt6"

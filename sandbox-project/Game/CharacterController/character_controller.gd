@@ -7,6 +7,13 @@ class_name CharacterController
 @export var acceleration: float = 10.0
 @export var friction: float = 10.0
 
+# Camera controls
+@export var camera_pitch_min: float = 30.0
+@export var camera_pitch_max: float = 90.0
+@export var camera_yaw_min: float = -180.0
+@export var camera_yaw_max: float = 180.0
+@export var mouse_sensitivity: float = 500.0  # Higher values = less sensitive
+
 # Get the gravity from the project settings to be synced with RigidBody nodes
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -20,12 +27,35 @@ var camera: Camera3D
 var turn_speed: float = 10.0
 var target_rotation: float = 0.0
 
+# Camera pitch control
+var camera_pitch: float = 0.0
+var camera_yaw: float = 0.0
+
+# Character swapping
+@export var character_list_resource: CharacterList
+var current_character_index: int = 0
+var current_character_node: Node3D
+
 func _ready():
 	# Find and store references to character components
 	find_character_components()
 	
-	# Get camera reference
-	camera = get_node("Camera3D")
+	# Initialize current character node to the existing character in the scene
+	current_character_node = find_child("CHR_Minis_Baseball", true, false) as Node3D
+	if not current_character_node:
+		# Try to find any character node that starts with "CHR_"
+		for child in get_children():
+			if child.name.begins_with("CHR_"):
+				current_character_node = child
+				break
+	
+	# Get camera reference - try to find it as a child or parent
+	camera = find_child("Camera3D", true, false) as Camera3D
+	if not camera:
+		# If not found as child, try to find in parent scene
+		var parent_scene = get_parent()
+		if parent_scene:
+			camera = parent_scene.find_child("Camera3D", true, false) as Camera3D
 	
 	# Print found components for debugging
 	print("Character Controller: Found components:")
@@ -33,6 +63,7 @@ func _ready():
 	print("  - Skeleton: ", skeleton != null)
 	print("  - Mesh Instances: ", mesh_instances.size())
 	print("  - Camera: ", camera != null)
+	print("  - Current Character Node: ", current_character_node != null)
 
 func find_character_components():
 	# Find AnimationPlayer
@@ -52,6 +83,13 @@ func find_mesh_instances_recursive(node: Node):
 		find_mesh_instances_recursive(child)
 
 func _physics_process(delta):
+	# Handle mouse input for camera pitch
+	handle_mouse_input()
+	
+	# Handle character swapping
+	if Input.is_action_just_pressed("swap_character"):  # Only custom action
+		swap_character()
+	
 	# Add gravity
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -73,8 +111,23 @@ func _physics_process(delta):
 
 	# Handle movement
 	if input_dir != Vector2.ZERO:
-		# Simple world space movement (top-down view)
-		var direction = Vector3(input_dir.x, 0, input_dir.y).normalized()
+		var direction = Vector3.ZERO
+		
+		# Screen space movement - convert input to camera-relative direction
+		if camera:
+			var camera_basis = camera.global_transform.basis
+			
+			# Forward/backward relative to camera
+			direction += camera_basis.z * input_dir.y  # Up/down input affects Z axis
+			# Left/right relative to camera  
+			direction += camera_basis.x * input_dir.x   # Left/right input affects X axis
+			
+			# Remove Y component to keep movement on horizontal plane
+			direction.y = 0
+			direction = direction.normalized()
+		else:
+			# Fallback to world space movement if no camera found
+			direction = Vector3(input_dir.x, 0, input_dir.y).normalized()
 		
 		# Calculate target rotation based on movement direction
 		target_rotation = atan2(direction.x, direction.z)
@@ -103,6 +156,32 @@ func _physics_process(delta):
 	# Move the character
 	move_and_slide()
 
+func handle_mouse_input():
+	# Get mouse movement
+	var mouse_delta = Input.get_last_mouse_velocity()
+	
+	# Update camera pitch and yaw based on mouse movement
+	if camera:
+		# Update pitch based on mouse Y movement
+		camera_pitch -= mouse_delta.y / mouse_sensitivity
+		
+		# Update yaw based on mouse X movement
+		camera_yaw -= mouse_delta.x / mouse_sensitivity
+		
+		# Clamp pitch to min/max values (convert degrees to radians)
+		var pitch_min_rad = deg_to_rad(-camera_pitch_max)
+		var pitch_max_rad = deg_to_rad(-camera_pitch_min)
+		camera_pitch = clamp(camera_pitch, pitch_min_rad, pitch_max_rad)
+		
+		# Clamp yaw to min/max values (convert degrees to radians)
+		var yaw_min_rad = deg_to_rad(camera_yaw_min)
+		var yaw_max_rad = deg_to_rad(camera_yaw_max)
+		camera_yaw = clamp(camera_yaw, yaw_min_rad, yaw_max_rad)
+		
+		# Apply pitch and yaw to camera rotation
+		camera.rotation.x = camera_pitch
+		camera.rotation.y = camera_yaw
+
 func handle_character_turning(delta: float):
 	# Smoothly rotate the character towards the target rotation
 	var current_rotation = rotation.y
@@ -117,6 +196,40 @@ func handle_character_turning(delta: float):
 	# Apply rotation
 	rotation.y = current_rotation + rotation_difference * turn_speed * delta
 
+func swap_character():
+	print("Tab pressed - attempting to swap character")
+	
+	if not character_list_resource:
+		print("No character list resource assigned!")
+		return
+	
+	print("Current character index: ", current_character_index)
+	print("Available characters: ", character_list_resource.get_character_count())
+	
+	# Cycle to next character
+	current_character_index = (current_character_index + 1) % character_list_resource.get_character_count()
+	print("New character index: ", current_character_index)
+	
+	# Remove current character immediately if it exists
+	if current_character_node:
+		print("Removing current character")
+		remove_child(current_character_node)
+		current_character_node.free()
+	
+	# Load and instantiate new character from resource
+	var character_scene = character_list_resource.get_character_at_index(current_character_index)
+	if character_scene:
+		print("Loading character: ", character_scene.resource_path)
+		print("Character name: ", character_scene.resource_path.get_file().get_basename())
+		current_character_node = character_scene.instantiate()
+		add_child(current_character_node)
+		
+		# Re-find components after adding the character
+		find_character_components()
+		
+		print("Successfully swapped to character: ", character_scene.resource_path)
+	else:
+		print("Failed to load character scene at index: ", current_character_index)
 
 # Function to insert a CHR scene
 func insert_character_scene(chr_scene_path: String):

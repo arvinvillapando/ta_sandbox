@@ -30,3 +30,23 @@ skeleton = NodePath("../..")
 mesh = ExtResource("4_w2r8o")
 skin = ExtResource("3_26nqj")
 skeleton = NodePath("../..")
+
+[node name="bball_legs2" type="MeshInstance3D" parent="." index="7"]
+mesh = ExtResource("7_cdawb")
+skin = ExtResource("3_26nqj")
+skeleton = NodePath("../..")
+
+[node name="bball_legs3" type="MeshInstance3D" parent="." index="8"]
+mesh = ExtResource("7_cdawb")
+skin = ExtResource("3_26nqj")
+skeleton = NodePath("../..")
+
+[node name="bball_legs4" type="MeshInstance3D" parent="." index="9"]
+mesh = ExtResource("7_cdawb")
+skin = ExtResource("3_26nqj")
+skeleton = NodePath("../..")
+
+[node name="bball_legs5" type="MeshInstance3D" parent="." index="10"]
+mesh = ExtResource("7_cdawb")
+skin = ExtResource("3_26nqj")
+skeleton = NodePath("../..")

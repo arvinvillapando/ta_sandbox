@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2lsjkvi4rbde"]
+
+[ext_resource type="PackedScene" uid="uid://ikwfvox52f2o" path="res://Art/Character/Minis/Baseball/SKM_Minis_Baseball.tscn" id="1_w1nk3"]
+[ext_resource type="ArrayMesh" uid="uid://chwrwlrq78o5m" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Arms.tres" id="2_08sqe"]
+[ext_resource type="Skin" uid="uid://dbipibrtfrbdl" path="res://Art/Character/Minis/Baseball/Resource/SKM_Minis_Baseball_Skin.tres" id="3_pg3pi"]
+[ext_resource type="ArrayMesh" uid="uid://dl6w5xgpjkc13" path="res://Art/Character/Minis/Crow/Resources/MSH_Hat.tres" id="4_7qpo5"]
+[ext_resource type="ArrayMesh" uid="uid://dmryqm6brcbif" path="res://Art/Character/Minis/Crow/Resources/MSH_Beak.tres" id="5_0wl6h"]
+
+[node name="SKM_Minis_Baseball" instance=ExtResource("1_w1nk3")]
+
+[node name="bball_arms" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19822294, 0.094459474)
+
+[node name="bball_arms2" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(0.89, 0, 0, 0, 0.89, 0, 0, 0, 0.89, 0, 0.07464513, 0.09488365)
+mesh = ExtResource("2_08sqe")
+skin = ExtResource("3_pg3pi")
+skeleton = NodePath("../..")
+
+[node name="bball_body" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1.3483151, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="bball_eyes" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18175906, 0)
+
+[node name="bball_hat" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1588759, 0)
+mesh = ExtResource("4_7qpo5")
+
+[node name="Beak" type="MeshInstance3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13558377, 0)
+mesh = ExtResource("5_0wl6h")
+skin = ExtResource("3_pg3pi")
+skeleton = NodePath("../..")

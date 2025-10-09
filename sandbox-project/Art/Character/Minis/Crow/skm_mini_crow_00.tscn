@@ -1,0 +1,135 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4njb6bh4r7j1"]
+
+[ext_resource type="PackedScene" uid="uid://dgdsrne6m7krp" path="res://Art/Character/Minis/Crow/SKM_Minis_Crow.tscn" id="1_kmm6p"]
+[ext_resource type="Script" uid="uid://cl1o3nkcxy0n1" path="res://Art/Character/Scripts/asset_loader.gd" id="2_um168"]
+[ext_resource type="ArrayMesh" uid="uid://chwrwlrq78o5m" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Arms.tres" id="2_yin1r"]
+
+[sub_resource type="Skin" id="Skin_ut6sm"]
+resource_name = "Skin"
+bind_count = 37
+bind/0/name = &"root"
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/1/name = &"Hips"
+bind/1/bone = -1
+bind/1/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9443044e-33, -0.13499999, 1.1368684e-15)
+bind/2/name = &"body"
+bind/2/bone = -1
+bind/2/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.992673e-16, -0.14999999, 1.1368684e-15)
+bind/3/name = &"adj_head"
+bind/3/bone = -1
+bind/3/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0075946e-16, -0.19201022, 1.1368684e-15)
+bind/4/name = &"head"
+bind/4/bone = -1
+bind/4/pose = Transform3D(1, 0, 0, 0, 0.9999225, -0.012450409, 0, 0.012450409, 0.9999225, 0, -0.19199543, -0.0023906115)
+bind/5/name = &"head_item"
+bind/5/bone = -1
+bind/5/pose = Transform3D(1, 0, 0, 0, 0.9999226, 0.012450412, 0, -0.012450417, 0.9999224, 0, -0.4889957, 0.0023906168)
+bind/6/name = &"Face"
+bind/6/bone = -1
+bind/6/pose = Transform3D(1, 0, 0, 0, 0.9999225, -0.012450409, 0, 0.012450409, 0.9999225, 3.007594e-16, -0.26444894, 0.027641108)
+bind/7/name = &"adj_brow_R"
+bind/7/bone = -1
+bind/7/pose = Transform3D(1, 0, 0, 0, 0.9999226, -0.012451178, 0, 0.012451177, 0.99992245, 3.007594e-16, -0.2669954, 0.027609192)
+bind/8/name = &"brow_main_r"
+bind/8/bone = -1
+bind/8/pose = Transform3D(1, 0, 0, 0, 0.9999226, -0.012450432, 0, 0.012450431, 0.99992245, 0.00075, -0.2677441, 0.028485589)
+bind/9/name = &"brow_r"
+bind/9/bone = -1
+bind/9/pose = Transform3D(1, 0, 0, 0, 0.9999226, -0.01245101, 0, 0.01245101, 0.99992245, 0.03825, -0.342744, -0.18151462)
+bind/10/name = &"brow_curl_r"
+bind/10/bone = -1
+bind/10/pose = Transform3D(1, 0, 0, 0, 0.9999226, -0.012450366, 0, 0.012450365, 0.99992245, 0.07124999, -0.3427441, -0.18151438)
+bind/11/name = &"adj_brow_L"
+bind/11/bone = -1
+bind/11/pose = Transform3D(1, 0, 0, 0, 0.9999226, -0.012451178, 0, 0.012451177, 0.99992245, 3.007594e-16, -0.2669954, 0.027609192)
+bind/12/name = &"brow_main_l"
+bind/12/bone = -1
+bind/12/pose = Transform3D(1, 0, 0, 0, 0.9999226, -0.012450432, 0, 0.012450431, 0.99992245, -0.00075, -0.2677441, 0.028485589)
+bind/13/name = &"brow_l"
+bind/13/bone = -1
+bind/13/pose = Transform3D(1, 0, 0, 0, 0.9999226, -0.01245101, 0, 0.01245101, 0.99992245, -0.03825, -0.342744, -0.18151462)
+bind/14/name = &"brow_curl_l"
+bind/14/bone = -1
+bind/14/pose = Transform3D(1, 0, 0, 0, 0.9999226, -0.012450366, 0, 0.012450365, 0.99992245, -0.07124999, -0.3427441, -0.18151438)
+bind/15/name = &"adj_eye_R"
+bind/15/bone = -1
+bind/15/pose = Transform3D(0.98569435, -0.0020984435, -0.16852957, 0.0079199225, 0.99939483, 0.033878025, 0.16835646, -0.03472813, 0.9851142, -0.004658699, -0.2628766, 0.039642174)
+bind/16/name = &"eyes_r"
+bind/16/bone = -1
+bind/16/pose = Transform3D(0.9848027, -0.0022183652, 0.17366157, 0.03234622, 0.9847659, -0.17085007, -0.170637, 0.17387094, 0.96987194, 0.006667844, -0.2678091, -0.016612308)
+bind/17/name = &"eyeShape_r"
+bind/17/bone = -1
+bind/17/pose = Transform3D(0.9848028, -0.0022183543, 0.17366156, 0.032346215, 0.9847659, -0.17085016, -0.17063697, 0.173871, 0.96987206, 0.0066679227, -0.26780912, -0.24910757)
+bind/18/name = &"adj_eye_L"
+bind/18/bone = -1
+bind/18/pose = Transform3D(0.9859549, 0.0020793297, 0.16699885, -0.007847988, 0.99939483, 0.033890594, -0.16682729, -0.034725208, 0.9853744, 0.0046163993, -0.2628762, 0.03964945)
+bind/19/name = &"eyes_l"
+bind/19/bone = -1
+bind/19/pose = Transform3D(0.9848028, 0.0022183508, -0.17366154, -0.032346208, 0.9847661, -0.17085005, 0.17063698, 0.17387098, 0.969872, -0.006667841, -0.26780915, -0.01661231)
+bind/20/name = &"eyeShape_l"
+bind/20/bone = -1
+bind/20/pose = Transform3D(0.9848029, 0.0022183566, -0.17366159, -0.032346256, 0.98476595, -0.17085025, 0.17063706, 0.17387116, 0.9698721, -0.0066679292, -0.26780912, -0.24910761)
+bind/21/name = &"adj_mouth"
+bind/21/bone = -1
+bind/21/pose = Transform3D(1, 0, 0, 0, 0.9999227, 0.012442458, 0, -0.012442462, 0.99992263, 3.007594e-16, -0.29998285, 0.03279896)
+bind/22/name = &"mouth_root"
+bind/22/bone = -1
+bind/22/pose = Transform3D(1, 0, 0, 0, 0.99730116, -0.0734188, 0, 0.07341881, 0.9973011, 3.007594e-16, -0.30169088, 0.006932816)
+bind/23/name = &"nose"
+bind/23/bone = -1
+bind/23/pose = Transform3D(1, 0, 0, 0, 0.9951642, -0.09822642, 0, 0.09822642, 0.9951642, 0, -0.26838008, -0.23540832)
+bind/24/name = &"mouth"
+bind/24/bone = -1
+bind/24/pose = Transform3D(1, 0, 0, 0, 0.99516404, -0.09822759, 0, 0.09822759, 0.99516404, 1.893266e-31, -0.25337985, -0.23422617)
+bind/25/name = &"adj_clavicle"
+bind/25/bone = -1
+bind/25/pose = Transform3D(1, 0, 0, 0, 0.99992245, 0.012450431, 0, -0.0124504315, 0.9999224, 3.007594e-16, -0.2528366, 0.0031481695)
+bind/26/name = &"arm_l"
+bind/26/bone = -1
+bind/26/pose = Transform3D(0.9687355, -0.05283511, -0.24240455, 0.044461623, 0.9982145, -0.03988874, 0.24407928, 0.027863936, 0.9693551, -0.18155263, -0.28385517, -0.057370078)
+bind/27/name = &"elbow_l"
+bind/27/bone = -1
+bind/27/pose = Transform3D(0.9999999, 7.2346262e-09, 3.3645153e-09, -4.4631867e-09, 0.99992234, 0.01245041, 5.0627392e-08, -0.0124504175, 0.99992245, -0.22914568, -0.16249262, -0.018011503)
+bind/28/name = &"arm_r"
+bind/28/bone = -1
+bind/28/pose = Transform3D(0.9609581, 0.05988523, 0.27013588, -0.048619654, 0.9976534, -0.048209958, -0.27238902, 0.033193838, 0.96161455, 0.17802866, -0.28454033, -0.064568244)
+bind/29/name = &"elbow_r"
+bind/29/bone = -1
+bind/29/pose = Transform3D(0.9999999, 1.1368861e-08, 2.1971122e-08, -8.755383e-09, 0.9999225, 0.012450423, -1.8920272e-09, -0.012450432, 0.9999225, 0.22910488, -0.16248551, -0.018024819)
+bind/30/name = &"adj_TailLocation"
+bind/30/bone = -1
+bind/30/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1435, 0.1015)
+bind/31/name = &"tail_00"
+bind/31/bone = -1
+bind/31/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1435, 0.1015)
+bind/32/name = &"tail_01"
+bind/32/bone = -1
+bind/32/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14349999, 0.2215)
+bind/33/name = &"leg_l"
+bind/33/bone = -1
+bind/33/pose = Transform3D(1, 3.3985884e-08, 4.8458737e-06, -9.429304e-08, 0.9999227, 0.012445597, -4.8450756e-06, -0.012445597, 0.9999225, -0.08250009, -0.14231034, -0.01762782)
+bind/34/name = &"knee_l"
+bind/34/bone = -1
+bind/34/pose = Transform3D(1, 3.3985884e-08, 4.8458737e-06, -9.429306e-08, 0.9999227, 0.0124456, -4.845075e-06, -0.0124456, 0.9999225, -0.08250009, -0.04117884, -0.01888705)
+bind/35/name = &"leg_r"
+bind/35/bone = -1
+bind/35/pose = Transform3D(1, 0, 0, 0, 0.9999226, 0.01245041, 0, -0.01245041, 0.99992245, 0.08250001, -0.14231057, -0.017628238)
+bind/36/name = &"knee_r"
+bind/36/bone = -1
+bind/36/pose = Transform3D(1, 0, 0, 0, 0.9999226, 0.012450397, 0, -0.012450397, 0.99992245, 0.08250001, -0.041178994, -0.018887468)
+
+[node name="SKM_MiniCrow" instance=ExtResource("1_kmm6p")]
+script = ExtResource("2_um168")
+
+[node name="Arms" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 7.5497894e-08, 0, -7.5497894e-08, 1, 0, 0.022403544, 0.06851041)
+mesh = ExtResource("2_yin1r")
+skin = SubResource("Skin_ut6sm")
+skeleton = NodePath("../..")
+
+[node name="Arms2" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.9422271, 0.33497477, 0, -0.33497477, 0.9422271, 0, 0.10921147, 0.10935544)
+mesh = ExtResource("2_yin1r")
+skin = SubResource("Skin_ut6sm")
+skeleton = NodePath("../..")
