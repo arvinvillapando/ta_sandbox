@@ -1,12 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2lsjkvi4rbde"]
+[gd_scene load_steps=9 format=3 uid="uid://b2lsjkvi4rbde"]
 
 [ext_resource type="PackedScene" uid="uid://ikwfvox52f2o" path="res://Art/Character/Minis/Baseball/SKM_Minis_Baseball.tscn" id="1_w1nk3"]
 [ext_resource type="ArrayMesh" uid="uid://chwrwlrq78o5m" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Arms.tres" id="2_08sqe"]
+[ext_resource type="ArrayMesh" uid="uid://dp3cm7bkw0e76" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Body.tres" id="3_7qpo5"]
 [ext_resource type="Skin" uid="uid://dbipibrtfrbdl" path="res://Art/Character/Minis/Baseball/Resource/SKM_Minis_Baseball_Skin.tres" id="3_pg3pi"]
+[ext_resource type="ArrayMesh" uid="uid://bbghwtslggd4a" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Eyes.tres" id="4_0wl6h"]
 [ext_resource type="ArrayMesh" uid="uid://dl6w5xgpjkc13" path="res://Art/Character/Minis/Crow/Resources/MSH_Hat.tres" id="4_7qpo5"]
 [ext_resource type="ArrayMesh" uid="uid://dmryqm6brcbif" path="res://Art/Character/Minis/Crow/Resources/MSH_Beak.tres" id="5_0wl6h"]
+[ext_resource type="ArrayMesh" uid="uid://b5cok1nwr1ckj" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Legs.tres" id="7_8sa8l"]
 
 [node name="SKM_Minis_Baseball" instance=ExtResource("1_w1nk3")]
+mesh_data = {
+"Beak": ExtResource("5_0wl6h"),
+"bball_arms": ExtResource("2_08sqe"),
+"bball_arms2": ExtResource("2_08sqe"),
+"bball_body": ExtResource("3_7qpo5"),
+"bball_eyes": ExtResource("4_0wl6h"),
+"bball_hat": ExtResource("4_7qpo5"),
+"bball_legs": ExtResource("7_8sa8l")
+}
 
 [node name="bball_arms" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19822294, 0.094459474)
@@ -30,5 +42,11 @@ mesh = ExtResource("4_7qpo5")
 [node name="Beak" type="MeshInstance3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13558377, 0)
 mesh = ExtResource("5_0wl6h")
+skin = ExtResource("3_pg3pi")
+skeleton = NodePath("../..")
+
+[node name="bball_legs2" type="MeshInstance3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22553295, 0)
+mesh = ExtResource("7_8sa8l")
 skin = ExtResource("3_pg3pi")
 skeleton = NodePath("../..")

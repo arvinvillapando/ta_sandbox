@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://pc3tv2kh7ikr"]
+[gd_scene load_steps=14 format=3 uid="uid://pc3tv2kh7ikr"]
 
 [ext_resource type="PackedScene" uid="uid://4xykb0ieahuc" path="res://Art/Armature/arm_minis.tscn" id="1_5noeh"]
 [ext_resource type="PackedScene" uid="uid://4m5g54x56qj4" path="res://Art/Character/Minis/NewBaseBallMini/skm_minis_baseball_new.tscn" id="2_x82yw"]
+[ext_resource type="ArrayMesh" uid="uid://chwrwlrq78o5m" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Arms.tres" id="3_3etib"]
 [ext_resource type="AnimationLibrary" uid="uid://dyh5otf7hx1np" path="res://Art/Motion/Minis/Resources/AnimationLibraries/ANIM_SharedMiniLib.tres" id="3_8ipkl"]
+[ext_resource type="ArrayMesh" uid="uid://dp3cm7bkw0e76" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Body.tres" id="4_qhcll"]
+[ext_resource type="ArrayMesh" uid="uid://bbghwtslggd4a" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Eyes.tres" id="5_mdswj"]
+[ext_resource type="ArrayMesh" uid="uid://dmryqm6brcbif" path="res://Art/Character/Minis/Crow/Resources/MSH_Beak.tres" id="6_37i0f"]
+[ext_resource type="ArrayMesh" uid="uid://ltpoqcwl0yk2" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Hat.tres" id="7_5u8ia"]
+[ext_resource type="ArrayMesh" uid="uid://b5cok1nwr1ckj" path="res://Art/Character/Minis/Baseball/Resource/Baseball_Legs.tres" id="8_soax6"]
+[ext_resource type="PackedScene" uid="uid://d4njb6bh4r7j1" path="res://Art/Character/Minis/Crow/skm_mini_crow_00.tscn" id="9_1da2a"]
+[ext_resource type="ArrayMesh" uid="uid://b8cs2iv4nbltv" path="res://Art/Character/Minis/Crow/Resources/MSH_Eyes.tres" id="11_2ioll"]
+[ext_resource type="ArrayMesh" uid="uid://dl6w5xgpjkc13" path="res://Art/Character/Minis/Crow/Resources/MSH_Hat.tres" id="12_tilv7"]
+[ext_resource type="ArrayMesh" uid="uid://462qibu56tuv" path="res://Art/Character/Minis/Crow/Resources/MSH_Legs.tres" id="13_vsdss"]
 
 [node name="ChrMinisCrow" type="Node3D"]
 
@@ -82,6 +92,29 @@ bones/46/scale = Vector3(1, 1, 1)
 
 [node name="SKM_Minis_Baseball" parent="Skeleton3D" instance=ExtResource("2_x82yw")]
 transform = Transform3D(1, 0, 0, 0, 1, -7.5497894e-08, 0, 7.5497894e-08, 1, 0, 0, 0)
+mesh_data = {
+"bball_arms": ExtResource("3_3etib"),
+"bball_arms2": ExtResource("3_3etib"),
+"bball_beak": ExtResource("6_37i0f"),
+"bball_body": ExtResource("4_qhcll"),
+"bball_eyes": ExtResource("5_mdswj"),
+"bball_hat": ExtResource("7_5u8ia"),
+"bball_legs": ExtResource("8_soax6"),
+"bball_legs2": ExtResource("8_soax6"),
+"bball_legs3": ExtResource("8_soax6"),
+"bball_legs4": ExtResource("8_soax6"),
+"bball_legs5": ExtResource("8_soax6")
+}
+
+[node name="SKM_MiniCrow" parent="Skeleton3D" instance=ExtResource("9_1da2a")]
+mesh_data = {
+"Arms": ExtResource("3_3etib"),
+"Arms2": ExtResource("3_3etib"),
+"crow_beak": ExtResource("6_37i0f"),
+"crow_eyes": ExtResource("11_2ioll"),
+"crow_hat": ExtResource("12_tilv7"),
+"crow_legs": ExtResource("13_vsdss")
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
